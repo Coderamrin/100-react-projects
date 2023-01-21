@@ -1,0 +1,8 @@
+// API endpoints
+
+Search meal by name
+https://www.themealdb.com/api/json/v1/1/search.php?f="name"
+
+Get single meal
+https://www.themealdb.com/api/json/v1/1/lookup.php?i=id
+

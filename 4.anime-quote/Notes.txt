@@ -1,0 +1,5 @@
+Quote API: https://animechan.vercel.app/api/random
+Twitter Share link: https://twitter.com/intent/tweet?text="${text} &hashtags=animeQuote
+
+Color
+1. card bg: rgba(211, 235, 255, 0.57)

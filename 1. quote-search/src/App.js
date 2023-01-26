@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Item from "./components/Item";
@@ -50,7 +49,7 @@ function App() {
         </button>
       </form>
 
-      {quotes && (
+      {quotes.length !== 0 && (
         <div className="mt-5 w-[800px] mx-auto ">
           {quotes.map((quote, i) => {
             return <Item quote={quote} key={i} />;
@@ -62,3 +61,4 @@ function App() {
 }
 
 export default App;
+

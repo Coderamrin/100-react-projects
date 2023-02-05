@@ -1,13 +1,11 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [city, setCity] = useState("New York");
   const [weather, setWeather] = useState();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const fetchWeather = () => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6243aaf48b62471c43490a0d129cb8dc&units=metric`
     )
@@ -16,14 +14,11 @@ function App() {
       .catch((error) => console.log(error.message));
   };
 
-  useEffect(() => {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6243aaf48b62471c43490a0d129cb8dc&units=metric`
-    )
-      .then((res) => res.json())
-      .then((data) => setWeather(data))
-      .catch((error) => console.log(error.message));
-  }, [setWeather, city]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetchWeather();
+  };
 
   return (
     <div className="app flex flex-col items-center">
